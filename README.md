@@ -316,3 +316,35 @@ development환경과 production 환경에 따라 config 파일을 분리할 수 
 
 - https://meetup.toast.com/posts/153
 - https://velog.io/@jeff0720/React-개발-환경을-구축하면서-배우는-Webpack-기초
+
+## ❓ JEST + react-testing-library 를 이용한 test 환경 설정
+
+```bash
+# install
+yarn add jest @testing-library/jest-dom @testing-library/react -D
+```
+
+```json
+// package.json
+{
+	"jest": {
+		"moduleDirectories": ["node_modules", "src"],
+		"transform": {
+			"\\.(js|jsx)?$": "babel-jest"
+		},
+		"moduleNameMapper": {
+			"\\.(css|scss|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/test/__mocks__/fileMock.js"
+		},
+		"setupFilesAfterEnv": [
+			"@testing-library/jest-dom/extend-expect",
+			"@testing-library/react/cleanup-after-each"
+		],
+		"testPathIgnorePatterns": ["/node_modules/", "/public/"],
+		"moduleFileExtensions": ["js", "json", "jsx", "node"]
+	}
+}
+```
+
+### 👍 참고자료
+
+- https://dev.to/aromanarguello/getting-started-with-jest-react-testing-library-4nga
