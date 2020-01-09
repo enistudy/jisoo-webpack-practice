@@ -21,6 +21,25 @@ module.exports = {
 			{
 				test: /\.css$/i,
 				use: ["style-loader", "css-loader"]
+			},
+			{
+				test: /\.(png|jpg|jpeg|gif)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				use: {
+					loader: "url-loader",
+					options: {
+						name: "[name].[ext]?[hash]",
+						publicPath: "./build/",
+						limit: 10000
+					}
+				}
+			},
+			{
+				test: /\.(png|jpg|jpeg|gif|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				loader: "file-loader",
+				options: {
+					publicPath: "./",
+					name: "[name].[ext]?[hash]"
+				}
 			}
 		]
 	},
