@@ -9,6 +9,7 @@ import "style.scss";
 const App = () => {
 	apple();
 	console.log(banana);
+	console.log(process.env.HELLO_DOT_ENV);
 
 	return (
 		<>

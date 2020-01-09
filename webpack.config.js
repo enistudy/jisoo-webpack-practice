@@ -3,6 +3,7 @@ const PORT = 3000;
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const DotenvPlugin = require("dotenv-webpack");
 
 module.exports = {
 	context: path.resolve(__dirname, "src"),
@@ -53,7 +54,8 @@ module.exports = {
 			filename: path.join(__dirname, "build/index.html"),
 			favicon: path.join(__dirname, "public/favicon.ico"),
 			inject: true
-		})
+		}),
+		new DotenvPlugin()
 	],
 	resolve: {
 		extensions: [".js", ".json"],
