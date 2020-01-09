@@ -31,7 +31,7 @@ webpack은 대표적인 모듈 번들러중의 하나입니다. 공식 document�
 
 ```bash
 # install
-yarn add webpack webpack-cli --save-dev
+yarn add webpack webpack-cli -D
 ```
 
 ### 📌 Entry
@@ -105,7 +105,7 @@ ES6로작성된 js파일을 ES5로 변환하기 위해 babel-loader를 설정해
 
 ```bash
 # install
-yarn add babel-loader @babel/core --save-dev
+yarn add babel-loader @babel/core -D
 ```
 
 ```js
@@ -126,7 +126,7 @@ css 파일을 사용하기 위해서는 css-loader와 style-loader를 사용해�
 
 ```bash
 # install
-yarn add style-loader css-loader --save-dev
+yarn add style-loader css-loader -D
 ```
 
 ```js
@@ -150,7 +150,7 @@ file-loader는 말그대로 지정된 형식의 파일을 모듈로 변환해주
 
 ```bash
 # install
-yarn add file-loader url-loader --save-dev
+yarn add file-loader url-loader -D
 ```
 
 ```js
@@ -191,7 +191,7 @@ module.exports = {
 
 ```bash
 # install
-yarn add sass-loader node-sass --save-dev
+yarn add sass-loader node-sass -D
 ```
 
 ```js
@@ -217,7 +217,7 @@ loader가 각각의 모듈에 영향을 주는 기능을 한다면, plugin은 �
 
 ```bash
 # install
-yarn add html-webpack-plugin --save-dev
+yarn add html-webpack-plugin -D
 ```
 
 ```js
@@ -243,7 +243,7 @@ dotenv를 사용하기 위해서 plugin을 설정하는 것으로 간단히 해�
 
 ```bash
 # install
-yarn add dotenv-webpack --save-dev
+yarn add dotenv-webpack -D
 ```
 
 ```js
