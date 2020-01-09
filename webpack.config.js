@@ -23,15 +23,8 @@ module.exports = {
 				use: ["style-loader", "css-loader"]
 			},
 			{
-				test: /\.(png|jpg|jpeg|gif)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-				use: {
-					loader: "url-loader",
-					options: {
-						name: "[name].[ext]?[hash]",
-						publicPath: "./build/",
-						limit: 10000
-					}
-				}
+				test: /\.s[ac]ss$/i,
+				use: ["style-loader", "css-loader", "sass-loader"]
 			},
 			{
 				test: /\.(png|jpg|jpeg|gif|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -39,6 +32,16 @@ module.exports = {
 				options: {
 					publicPath: "./",
 					name: "[name].[ext]?[hash]"
+				}
+			},
+			{
+				test: /\.(png|jpg|jpeg|gif)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+				use: {
+					loader: "url-loader",
+					options: {
+						name: "[name].[ext]?[hash]",
+						limit: 8192
+					}
 				}
 			}
 		]

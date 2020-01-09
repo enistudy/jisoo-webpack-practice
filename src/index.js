@@ -3,10 +3,11 @@ import banana from "./banana";
 import logo from "./assets/logo.svg";
 
 import "./style.css";
+import "./style.scss";
 
 console.log("Hello webpack");
 apple();
-console.log(logo);
+console.log(banana);
 
 const rootElement = document.getElementById("root");
-rootElement.innerHTML = `<img src=${logo}>`;
+rootElement.innerHTML = `<img src=${logo}/><h1>webpack!</h1>`;
