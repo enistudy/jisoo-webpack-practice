@@ -8,5 +8,18 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, "build"),
 		filename: "[name].bundle.js"
+	},
+	module: {
+		rules: [
+			{
+				test: /\.(js)$/,
+				exclude: /node_modules/,
+				use: ["babel-loader"]
+			},
+			{
+				test: /\.css$/i,
+				use: ["style-loader", "css-loader"]
+			}
+		]
 	}
 };
