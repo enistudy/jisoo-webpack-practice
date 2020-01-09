@@ -52,5 +52,9 @@ module.exports = {
 			filename: path.join(__dirname, "build/index.html"),
 			inject: true
 		})
-	]
+	],
+	resolve: {
+		extensions: [".js", ".json"],
+		modules: [path.join(__dirname, "src"), "node_modules"]
+	}
 };
