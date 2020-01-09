@@ -1,16 +1,13 @@
-const PORT = 3000;
-
 const path = require("path");
-const webpack = require("webpack");
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const DotenvPlugin = require("dotenv-webpack");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-	context: path.resolve(__dirname, "src"),
+	context: path.resolve(__dirname, "..", "src"),
 	entry: { app: ["@babel/polyfill", "./index.js"] },
 	output: {
-		path: path.resolve(__dirname, "build"),
+		path: path.resolve(__dirname, "..", "build"),
 		filename: "[name].bundle.js"
 	},
 	module: {
@@ -49,31 +46,16 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
-			template: path.join(__dirname, "public/index.html"),
-			filename: path.join(__dirname, "build/index.html"),
-			favicon: path.join(__dirname, "public/favicon.ico"),
+			template: path.join(__dirname, "..", "public/index.html"),
+			filename: path.join(__dirname, "..", "build/index.html"),
+			favicon: path.join(__dirname, "..", "public/favicon.ico"),
 			inject: true
 		}),
-		new DotenvPlugin(),
-		new CleanWebpackPlugin()
+		new DotenvPlugin()
 	],
 	resolve: {
 		extensions: [".js", ".json"],
-		modules: [path.join(__dirname, "src"), "node_modules"]
-	},
-	devServer: {
-		host: "localhost",
-		contentBase: path.join(__dirname, "build/"),
-		port: PORT,
-		open: true,
-		hot: true,
-		historyApiFallback: true,
-		stats: "minimal",
-		overlay: {
-			warnings: true,
-			errors: true
-		}
+		modules: [path.join(__dirname, "..", "src"), "node_modules"]
 	}
 };

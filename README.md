@@ -2,6 +2,8 @@
 
 > webpack을 이용하여 React 개발환경을 처음부터 설정해보는 저장소입니다.
 
+<br>
+
 ## ❓ module in browser
 
 서버에서 처리하는 로직을 프론트로 옮기는 경우가 많아지면서, 프론트엔드에서 자바스크립트로 작성해야 하는 코드의 양이 증가하고 있습니다. 작성해야 하는 코드의 양이 많아지면 이를 효율적으로 관리해야 할 필요가 있습니다. 여러 개의 파일을 브라우저에서 로딩할 수 있지만, 이는 여러 번의 네트워크 요청을 해야하는 단점이 있을 뿐 아니라 각각의 파일이 서로의 스코프를 침범할 수 있는 문제가 있습니다.
@@ -16,6 +18,8 @@
 - https://d2.naver.com/helloworld/12864
 - https://ayonc.tistory.com/136
 - https://www.jvandemo.com/a-10-minute-primer-to-javascript-modules-module-formats-module-loaders-and-module-bundlers/
+
+<br>
 
 ## ❓ webpack
 
@@ -65,6 +69,8 @@ module.exports = {
 
 > By default the current directory is used, but it's recommended to pass a value in your configuration. This makes your configuration independent from CWD (current working directory).
 
+<br>
+
 ### 📌 Output
 
 엔트리에 명시한 파일을 시작으로 번들링된 결과물의 위치를 설정하는 속성입니다.
@@ -81,6 +87,8 @@ module.exports = {
 파일이 위치할 디렉토리와 파일의 이름을 명시만하면 간단히 설정할 수 있습니다. MPA 프로젝트를 구성하거나 코드 스플리팅을 이용할 경우 추가적인 설정을 해주어야 합니다.
 
 > 설정 참고 링크 https://webpack.js.org/configuration/output/
+
+<br>
 
 ### 📌 Loaders
 
@@ -199,6 +207,8 @@ module.exports = {
 };
 ```
 
+<br>
+
 ### 📌 Plugins
 
 loader가 각각의 모듈에 영향을 주는 기능을 한다면, plugin은 번들된 결과 전체에 대한 작업을 수행합니다.
@@ -251,6 +261,8 @@ module.exports = {
 - https://webpack.js.org/concepts/
 - http://jeonghwan-kim.github.io/js/2017/05/15/webpack.html
 
+<br>
+
 ## ❓ webpack으로 React 개발환경 설정
 
 React로 작성된 코드를 브라우저에서 읽을 수 있도록 하기위해 ES5로 변환해주어야 합니다. babel이라는 도구를 사용하여 변환하는 작업, 트랜스파일링을 진행할 수 있습니다. babel을 사용하기위해서는 babel에 대한 설정을 명시한 babelrc파일을 작성해주어야 합니다.
@@ -275,11 +287,32 @@ module.exports = {
 };
 ```
 
+<br>
+
 ## ❓ devtool
 
 원본 코드와 난독화된 코드를 매핑하여 디버깅에 도움을 주는 속성입니다. [잘 정리된 링크](https://perfectacle.github.io/2016/11/14/Webpack-devtool-option-Performance/)가 있어 참고하면 좋을 것 같습니다.
+
+<br>
 
 ## ❓ devServer
 
 개발 시, 파일이 변경될 때 마다 매번 빌드를 하고 확인하는 과정을 없애주기 위해 [devServer](https://joshua1988.github.io/webpack-guide/devtools/webpack-dev-server.html#webpack-dev-server) 설정을 추가할 수 있습니다.
 설정에 [HMR](https://joshua1988.github.io/webpack-guide/devtools/hot-module-replacement.html)을 적용하면 파일이 변경될 때 마다 브라우저를 새로고침 할 필요가 없게 도와줍니다.
+
+### 👍 참고자료
+
+- https://velog.io/@jeff0720/React-개발-환경을-구축하면서-배우는-Webpack-기초
+
+<br>
+
+## ❓ 개발 - 배포 설정 파일 분리
+
+development환경과 production 환경에 따라 config 파일을 분리할 수 있습니다. 분리함으로써 각각의 환경에 따라 플러그인을 추가하여 환경에 따른 설정파일을 관리할 수 있다는 장점이 있습니다.
+
+> config 디렉토리에서 webpack config 파일들을 관리합니다. 공통이 되는 설정은 common 파일에서 관리하도록 합니다.
+
+### 👍 참고자료
+
+- https://meetup.toast.com/posts/153
+- https://velog.io/@jeff0720/React-개발-환경을-구축하면서-배우는-Webpack-기초

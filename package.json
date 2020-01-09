@@ -4,8 +4,8 @@
 	"description": "webpack을 이용하여 React 개발환경을 처음부터 설정해보는 저장소입니다.",
 	"main": "src/index.js",
 	"scripts": {
-		"dev": "webpack-dev-server",
-		"build": "webpack --production",
+		"dev": "webpack-dev-server --config ./config/webpack.config.dev",
+		"build": "webpack --config ./config/webpack.config.prod",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "YukJiSoo",
@@ -32,6 +32,7 @@
 		"url-loader": "^3.0.0",
 		"webpack": "^4.41.5",
 		"webpack-cli": "^3.3.10",
-		"webpack-dev-server": "^3.10.1"
+		"webpack-dev-server": "^3.10.1",
+		"webpack-merge": "^4.2.2"
 	}
 }
