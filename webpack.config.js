@@ -1,5 +1,7 @@
-const path = require("path");
+const PORT = 3000;
 
+const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -45,6 +47,7 @@ module.exports = {
 		]
 	},
 	plugins: [
+		new webpack.HotModuleReplacementPlugin(),
 		new HtmlWebpackPlugin({
 			template: path.join(__dirname, "public/index.html"),
 			filename: path.join(__dirname, "build/index.html"),
@@ -55,5 +58,18 @@ module.exports = {
 	resolve: {
 		extensions: [".js", ".json"],
 		modules: [path.join(__dirname, "src"), "node_modules"]
+	},
+	devServer: {
+		host: "localhost",
+		contentBase: path.join(__dirname, "build/"),
+		port: PORT,
+		open: true,
+		hot: true,
+		historyApiFallback: true,
+		stats: "minimal",
+		overlay: {
+			warnings: true,
+			errors: true
+		}
 	}
 };

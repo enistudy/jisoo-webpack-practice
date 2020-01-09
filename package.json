@@ -4,7 +4,8 @@
 	"description": "webpack을 이용하여 React 개발환경을 처음부터 설정해보는 저장소입니다.",
 	"main": "src/index.js",
 	"scripts": {
-		"start:dev": "webpack --development",
+		"dev": "webpack-dev-server",
+		"build": "webpack --production",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "YukJiSoo",
@@ -14,20 +15,21 @@
 		"react-dom": "^16.12.0"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.7.7",
 		"@babel/plugin-proposal-class-properties": "^7.7.4",
 		"@babel/polyfill": "^7.7.0",
 		"@babel/preset-env": "^7.7.7",
 		"@babel/preset-react": "^7.7.4",
+		"babel-loader": "^8.0.6",
+		"css-loader": "^3.4.1",
+		"file-loader": "^5.0.2",
+		"html-webpack-plugin": "^3.2.0",
+		"node-sass": "^4.13.0",
 		"sass-loader": "^8.0.0",
 		"style-loader": "^1.1.2",
 		"url-loader": "^3.0.0",
 		"webpack": "^4.41.5",
 		"webpack-cli": "^3.3.10",
-		"@babel/core": "^7.7.7",
-		"babel-loader": "^8.0.6",
-		"css-loader": "^3.4.1",
-		"file-loader": "^5.0.2",
-		"html-webpack-plugin": "^3.2.0",
-		"node-sass": "^4.13.0"
+		"webpack-dev-server": "^3.10.1"
 	}
 }
