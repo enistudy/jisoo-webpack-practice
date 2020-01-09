@@ -1,5 +1,7 @@
 const path = require("path");
 
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = {
 	context: path.resolve(__dirname, "src"),
 	entry: {
@@ -21,5 +23,12 @@ module.exports = {
 				use: ["style-loader", "css-loader"]
 			}
 		]
-	}
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: path.join(__dirname, "public/index.html"),
+			filename: path.join(__dirname, "build/index.html"),
+			inject: true
+		})
+	]
 };
