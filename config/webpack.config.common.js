@@ -8,7 +8,7 @@ module.exports = {
 	entry: { app: ["@babel/polyfill", "./index.js"] },
 	output: {
 		path: path.resolve(__dirname, "..", "build"),
-		filename: "[name].bundle.js"
+		filename: "[name].bundle.[hash].js"
 	},
 	module: {
 		rules: [

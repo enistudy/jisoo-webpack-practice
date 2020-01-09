@@ -4,7 +4,7 @@ const path = require("path");
 
 const { HotModuleReplacementPlugin } = require("webpack");
 const merge = require("webpack-merge");
-const webpackConfigCommon = require("./webpack.config");
+const webpackConfigCommon = require("./webpack.config.common");
 
 const webpackConfigDev = {
 	mode: "development",
